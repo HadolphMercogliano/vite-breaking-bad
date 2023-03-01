@@ -12,9 +12,13 @@ export default {
 </script>
 
 <template>
-  <p>FOUND {{ store.CardsList.length }} CARDS</p>
-  <div class="row row-cols-5">
-    <Cards />
+  <div>
+    <p class="bg-dark text-light fw-semibold m-0">
+      FOUND {{ store.CardsList.length }} CARDS
+    </p>
+    <div class="row row-cols-5 gy-3">
+      <Cards />
+    </div>
   </div>
 </template>
 

@@ -27,12 +27,22 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <HeaderApp />
-    <MainApp />
+  <HeaderApp />
+  <div class="bg-orange p-5">
+    <div class="bg-light py-4">
+      <div class="container">
+        <MainApp />
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "./assets/scss/style.scss" as *;
+.bg-orange {
+  background-color: coral;
+}
+.container {
+  background-color: white;
+}
 </style>

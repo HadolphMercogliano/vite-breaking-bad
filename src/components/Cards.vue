@@ -10,20 +10,27 @@ export default {
 </script>
 <template>
   <div
-    class="col"
+    class="col d-flex align-items-stretch"
     v-for="card in store.CardsList">
-    <img
-      class="img-fluid"
-      :src="card.card_images[0].image_url"
-      alt="" />
-    <div class="card-text text-center">
-      <p>{{ card.name.toUpperCase() }}</p>
-      <p>{{ card.archetype }}</p>
+    <div class="my-card">
+      <img
+        class="img-fluid"
+        :src="card.card_images[0].image_url"
+        alt="" />
+      <div class="card-text text-center pt-3">
+        <p class="fw-bolder text-light">{{ card.name.toUpperCase() }}</p>
+        <p>{{ card.archetype }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.col {
+.my-card {
+  background-color: coral;
+
+  .card-text {
+    font-size: 0.7rem;
+  }
 }
 </style>
