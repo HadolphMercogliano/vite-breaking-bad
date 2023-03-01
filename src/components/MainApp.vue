@@ -13,8 +13,8 @@ export default {
 
 <template>
   <div>
-    <p class="bg-dark text-light fw-semibold m-0">
-      FOUND {{ store.CardsList.length }} CARDS
+    <p class="bg-dark text-light fw-semibold m-0 p-3">
+      Found {{ store.CardsList.length }} cards
     </p>
     <div class="row row-cols-5 gy-3">
       <Cards />
@@ -23,5 +23,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/style.scss" as *;
+@use "../assets/scss/partials/mixins" as *;
 </style>

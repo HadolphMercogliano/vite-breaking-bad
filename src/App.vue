@@ -29,7 +29,7 @@ export default {
 <template>
   <HeaderApp />
   <div class="bg-orange p-5">
-    <div class="bg-light py-4">
+    <div class="bg-white py-4">
       <div class="container">
         <MainApp />
       </div>
@@ -39,8 +39,12 @@ export default {
 
 <style lang="scss" scoped>
 @use "./assets/scss/style.scss" as *;
+@use "./assets/scss/partials/mixins" as *;
 .bg-orange {
-  background-color: coral;
+  @include bg-orange;
+}
+.bg-white {
+  @include bg-white;
 }
 .container {
   background-color: white;

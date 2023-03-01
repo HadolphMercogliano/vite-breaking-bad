@@ -26,8 +26,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../assets/scss/partials/mixins" as *;
 .my-card {
-  background-color: coral;
+  @include bg-orange;
 
   .card-text {
     font-size: 0.7rem;
