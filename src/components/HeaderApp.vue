@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <div>ciao</div>
+  <div>ciao header</div>
 </template>
 
 <style lang="scss" scoped></style>
