@@ -14,7 +14,7 @@ export default {
 <template>
   <div>
     <p class="bg-dark text-light fw-semibold m-0 p-3">
-      Found {{ store.CardsList.length }} cards
+      Found {{ store.foundItems }} cards
     </p>
     <div class="row row-cols-5 gy-3">
       <Cards />
