@@ -1,12 +1,13 @@
 <script>
 import cardTypes from "../data/cardTypes";
 export default {
-  setup() {
+  data() {
     return {
       cardTypes,
       message: "hello searchbar",
     };
   },
+  emits: ["type-choise"],
 };
 </script>
 <template>
@@ -26,6 +27,7 @@ export default {
         v-for="cardType of cardTypes">
         <option
           v-for="(cType, index) in cardType.typesList"
+          @click="$emit('type-choise', cardType.typesList[index])"
           :value="cardType.typesList[index]">
           {{ cardType.typesList[index] }}
         </option>

@@ -14,17 +14,34 @@ export default {
   },
   components: { HeaderApp, MainApp, SearchBar },
 
+  methods: {
+    FilterforType(type) {
+      axios.get(`${store.endpoint}&${type}`).then((response) => {
+        console.log(response);
+        store.CardsList = response.data.data;
+        console.log(store.CardsList);
+        store.foundItems = response.data.meta.total_rows;
+        console.log(store.foundItems);
+      });
+      // axios
+      //   .get(
+      //     `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&type=${type}`
+      //   )
+      //   .then((response) => {
+      //     console.log(response);
+      //   });
+    },
+  },
+
   // chiamata axios a yu-gi-oh API
   created() {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-      .then((response) => {
-        // console.log(response);
-        store.CardsList = response.data.data;
-        // console.log(store.CardsList);
-        store.foundItems = response.data.meta.total_rows;
-        // console.log(store.foundItems);
-      });
+    axios.get(`${store.endpoint}`).then((response) => {
+      // console.log(response);
+      store.CardsList = response.data.data;
+      // console.log(store.CardsList);
+      store.foundItems = response.data.meta.total_rows;
+      // console.log(store.foundItems);
+    });
   },
 };
 </script>
@@ -32,7 +49,7 @@ export default {
 <template>
   <HeaderApp />
   <div class="bg-orange px-5">
-    <SearchBar />
+    <SearchBar @type-choise="FilterforType" />
     <div class="bg-white p-5">
       <div class="container">
         <MainApp />
