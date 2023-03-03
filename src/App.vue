@@ -16,7 +16,7 @@ export default {
 
   methods: {
     FilterforType(type) {
-      axios.get(`${store.endpoint}&${type}`).then((response) => {
+      axios.get(`${store.endpoint}&type=${type}`).then((response) => {
         console.log(response);
         store.CardsList = response.data.data;
         console.log(store.CardsList);
